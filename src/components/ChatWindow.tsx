@@ -17,7 +17,7 @@ export default function ChatWindow({ chatId }: { chatId: string }) {
 
   const queryClient = useQueryClient();
 
-  const { data: messages = [], isLoading } = useQuery<Message[]>({
+  const { data: messages = [] } = useQuery<Message[]>({
     queryKey: ["chatHistory", chatId],
     queryFn: () => {
       const saved = localStorage.getItem(`chatHistory-${chatId}`);
